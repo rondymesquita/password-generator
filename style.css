@@ -27,6 +27,12 @@ body {
   font-size: 16px;
 }
 
+span, p, div, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 textarea:focus, input:focus{
     outline: none;
 }
@@ -50,11 +56,6 @@ input[type=number] {
 .result__password {
   font-weight: 900;
   font-size: var(--font-size2);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 0;
 }
 
 .strength {
@@ -166,9 +167,15 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 28px;
   height: 28px;
-  line-height: 28px;
+  line-height: -1px;
   text-align: center;
   transition: ease all 0.2s;
+}
+
+.button--circle > span {
+  position: relative;
+  top: -1px;
+  padding: 0;
 }
 
 .button--medium {

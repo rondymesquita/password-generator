@@ -23,18 +23,22 @@
         <span class="section__title">Força: <span id="strengthText"></span></span class="section__title">
         <span class="section__title">Score: <span id="score"></span></span class="section__title">
       </section>
+    
       <section class="section size">
         <span class="section__title">Tamanho da senha: </span class="section__title">
+
         <div class="size__content">
           <label for="sizeInput" class="size__input_label">
-            <button id="sizeDecreaseButton" class="button--circle button--rounded button--primary">-</button>
+            <button id="sizeDecreaseButton" class="button--circle button--rounded button--primary"><span>-</span></button>
             <input type="number" id="sizeInput" name="sizeInput" class="size__input" min="6" max="128">
-            <button id="sizeIncreaseButton" class="button--circle button--rounded button--primary">+</button>
+            <button id="sizeIncreaseButton" class="button--circle button--rounded button--primary"><span>+</span></button>
           </label>
+
           <label for="sizeSlide" class="size__slide_label">
             <input type="range" id="sizeSlide" name="sizeSlide" min="6" max="128" class="size__slide">
           </label>
         </div>
+
       </section>
       <section class='options'>
         <label for="optionUppercase" class="options__label">

@@ -78,7 +78,7 @@ function calculateStrength(password) {
     const additions = _calculateAdditions(password)
     const deductions = _calculateDedutions(password)
 
-    console.log('>>>', additions)
+    // console.log('>>>', additions)
 
     const metrics = [
       _getRateOfChars(password),

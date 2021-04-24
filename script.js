@@ -2,7 +2,7 @@ window.onload = function () {
   main()
 }
 
-const {log} = console
+const {log, warn} = console
 
 const uppercaseCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseCharacters = 'abcdefghijklmnopqrstuvwxyz';
@@ -111,7 +111,16 @@ function main() {
   }
 
   function validateSize(value){
-    const _value = parseInt(value)
+    let _value
+    if (!value) {
+      return MIN_VALUE
+    }
+    try {
+      _value = parseInt(value)
+    } catch(err) {
+      log(`${value} is not a number`)
+      return MIN_VALUE
+    }
     if (_value < MIN_VALUE) {
       return MIN_VALUE
     } else if (_value > MAX_VALUE) {
