@@ -30,6 +30,9 @@ function main() {
 
   const sizeSlide = document.querySelector("#sizeSlide")
   const sizeInput = document.querySelector("#sizeInput")
+  const sizeIncreaseButton = document.querySelector("#sizeIncreaseButton")
+  const sizeDecreaseButton = document.querySelector("#sizeDecreaseButton")
+  
 
   const state = {
     options: {
@@ -112,7 +115,7 @@ function main() {
   function watchSizeSlideChange(callback){
     sizeSlide.addEventListener("change", (event)=> {
       const value = validateSize(event.target.value)
-      state.size = event.target.value
+      state.size = value
       callback()
     })
   }
@@ -147,6 +150,16 @@ function main() {
   }
   
   generateButton.addEventListener('click', () => {
+    generateAndRender()
+  })
+
+  sizeIncreaseButton.addEventListener('click', () => {
+    state.size += 1
+    generateAndRender()
+  })
+
+  sizeDecreaseButton.addEventListener('click', () => {
+    state.size -= 1
     generateAndRender()
   })
 

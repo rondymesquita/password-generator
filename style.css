@@ -31,6 +31,18 @@ textarea:focus, input:focus{
     outline: none;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .result {
   padding: 12px;
 }
@@ -112,18 +124,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .size__input {
-  width: 80px;
+  width: 50px;
+  text-align: center;
   font-size: var(--font-size0);
   border: 1px solid var(--base2);
   padding: 6px;
   border-radius: 18px;
+  margin: 0 6px;
 }
 
-.size__input[type=number]::-webkit-inner-spin-button,
-.size__input[type=number]::-webkit-outer-spin-button
-{
-  -webkit-appearance: none;
-  margin: 0;
+.size__input_label {
+  display: flex;
 }
 
 .options {
@@ -150,7 +161,17 @@ h1, h2, h3, h4, h5, h6 {
   padding: 12px;
 }
 
-.button {
+.button--circle {
+  font-size: var(--font-size1);
+  display: block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  transition: ease all 0.2s;
+}
+
+.button--medium {
   font-size: var(--font-size2);
   padding: 6px 24px;
   transition: ease all 0.2s;

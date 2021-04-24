@@ -27,7 +27,9 @@
         <span class="section__title">Tamanho da senha: </span class="section__title">
         <div class="size__content">
           <label for="sizeInput" class="size__input_label">
+            <button id="sizeDecreaseButton" class="button--circle button--rounded button--primary">-</button>
             <input type="number" id="sizeInput" name="sizeInput" class="size__input" min="6" max="128">
+            <button id="sizeIncreaseButton" class="button--circle button--rounded button--primary">+</button>
           </label>
           <label for="sizeSlide" class="size__slide_label">
             <input type="range" id="sizeSlide" name="sizeSlide" min="6" max="128" class="size__slide">
@@ -57,7 +59,7 @@
         </label>
       </section>
       <section class="footer">
-        <button id="generate" class="button button--rounded button--primary">Gerar</button>
+        <button id="generate" class="button button--medium button--rounded button--primary">Gerar</button>
       </section>
     </main>
     <script src="password.js"></script>
