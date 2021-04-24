@@ -9,6 +9,9 @@ const lowercaseCharacters = 'abcdefghijklmnopqrstuvwxyz';
 const digits = "0123456789"
 const symbols = "!@#$%^&*"
 
+const MIN_VALUE = 6
+const MAX_VALUE = 128
+
 function main() {
   const generateButton = document.querySelector("#generate")
   const passwordField = document.querySelector("#password")
@@ -61,6 +64,18 @@ function main() {
     sizeInput.value = state.size
     sizeSlide.value = state.size
 
+    if (state.size == MIN_VALUE) {
+      sizeDecreaseButton.disabled = true
+    } else {
+      sizeDecreaseButton.disabled = false
+    }
+
+    if (state.size == MAX_VALUE) {
+      sizeIncreaseButton.disabled = true
+    } else {
+      sizeIncreaseButton.disabled = false
+    }
+
     optionUppercase.checked = state.options.optionUppercase
     optionLowercase.checked = state.options.optionLowercase
     optionDigit.checked = state.options.optionDigit
@@ -96,10 +111,13 @@ function main() {
   }
 
   function validateSize(value){
-    if (value < 6) {
-      return 6
+    const _value = parseInt(value)
+    if (_value < MIN_VALUE) {
+      return MIN_VALUE
+    } else if (_value > MAX_VALUE) {
+      return MAX_VALUE
     }
-    return value
+    return _value
   }
 
   function watchOptionsChange(callback){
@@ -154,12 +172,14 @@ function main() {
   })
 
   sizeIncreaseButton.addEventListener('click', () => {
-    state.size += 1
+    const value = validateSize(state.size + 1)
+    state.size = value
     generateAndRender()
   })
 
   sizeDecreaseButton.addEventListener('click', () => {
-    state.size -= 1
+    const value = validateSize(state.size - 1)
+    state.size = value
     generateAndRender()
   })
 
