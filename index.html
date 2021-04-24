@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <main>
+      <section class="result">
+        <h2>O incrível gerador de senhas</h2>
+        <pre id="password" class="result__password"></pre>
+      </section>
+      <section class="strength">
+        <div class="strength__boxes">
+          <div id="strengthTerrible" class="strength__box strength__terrible"></div>
+          <div id="strengthBad" class="strength__box strength__bad"></div>
+          <div id="strengthOk" class="strength__box strength__ok"></div>
+          <div id="strengthGood" class="strength__box strength__good"></div>
+          <div id="strengthAwesome" class="strength__box strength__awesome"></div>
+        </div>
+        <span class="section__title">Força: <span id="strengthText"></span></span class="section__title">
+        <span class="section__title">Score: <span id="score"></span></span class="section__title">
+      </section>
+      <section class="section size">
+        <span class="section__title">Tamanho da senha: </span class="section__title">
+        <div class="size__content">
+          <label for="sizeInput" class="size__input_label">
+            <input type="number" id="sizeInput" name="sizeInput" class="size__input" min="6" max="128">
+          </label>
+          <label for="sizeSlide" class="size__slide_label">
+            <input type="range" id="sizeSlide" name="sizeSlide" min="6" max="128" class="size__slide">
+          </label>
+        </div>
+      </section>
+      <section class='options'>
+        <label for="optionUppercase" class="options__label">
+          <input class="options__input" id='optionUppercase' type="checkbox" name='optionUppercase'/>
+          <span class="checkmark"></span>
+          Letra Maiúscula
+        </label>
+        <label for="optionLowercase" class="options__label">
+          <input class="options__input" id='optionLowercase' type="checkbox" name='optionLowercase'/>
+          <span class="checkmark"></span>
+          Letra Minúscula
+        </label>
+        <label for="optionDigit" class="options__label">
+          <input class="options__input" id='optionDigit' type="checkbox" name='optionDigit'/>
+          <span class="checkmark"></span>
+          Números
+        </label>
+        <label for="optionSymbol" class="options__label">
+          <input class="options__input" id='optionSymbol' type="checkbox" name='optionSymbol'/>
+          <span class="checkmark"></span>
+          Símbolos
+        </label>
+      </section>
+      <section class="footer">
+        <button id="generate" class="button button--rounded button--primary">Gerar</button>
+      </section>
+    </main>
+    <script src="password.js"></script>
+    <script src="strength.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
