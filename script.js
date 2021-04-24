@@ -2,7 +2,7 @@ window.onload = function () {
   main()
 }
 
-const log = console.log
+const {log} = console
 
 const uppercaseCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseCharacters = 'abcdefghijklmnopqrstuvwxyz';
@@ -88,8 +88,15 @@ function main() {
       strengthAwesome.classList.add("visible")
     }
 
-    strengthText.innerHTML = strengthTexts[state.strength]
+    strengthText.innerHTML = strengthTexts[state.strength] || state.strength
     score.innerHTML = state.score
+  }
+
+  function validateSize(value){
+    if (value < 6) {
+      return 6
+    }
+    return value
   }
 
   function watchOptionsChange(callback){
@@ -104,6 +111,7 @@ function main() {
 
   function watchSizeSlideChange(callback){
     sizeSlide.addEventListener("change", (event)=> {
+      const value = validateSize(event.target.value)
       state.size = event.target.value
       callback()
     })
@@ -111,7 +119,8 @@ function main() {
   
   function watchSizeInputChange(callback){
     sizeInput.addEventListener("change", (event)=> {
-      state.size = event.target.value
+      const value = validateSize(event.target.value)
+      state.size = value
       callback()
     })
   }
@@ -122,6 +131,8 @@ function main() {
 
     if(state.allOptionsDisabled) {
       state.password = "Nenhuma opção selecionada"
+      state.strength = "-"
+      state.score = "-"
       render()
       return;
     }
